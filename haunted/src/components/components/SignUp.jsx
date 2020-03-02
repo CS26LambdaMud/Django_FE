@@ -40,7 +40,6 @@ class SignUp extends React.Component{
             <div className='signup'>    
             <form
             onSubmit={this.addUser}>
-               
                 <input
                 name="username"
                 type="text"
