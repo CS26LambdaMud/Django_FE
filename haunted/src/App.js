@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute'
-import SignIn from './components/components/SignIn';
-import SignUp from '../src/components/components/SignUp'
+import SignIn from './components/SignIn';
+import SignUp from '../src/components/SignUp'
 import './App.css';
 
 function App() {
