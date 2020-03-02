@@ -24,7 +24,7 @@ class SignIn extends React.Component {
     handleSubmit = e => {
         // let localStorage;
         e.preventDefault();
-        axios.post('api/login', this.state.credentials)
+        axios.post('https://adv-project-test.herokuapp.com/api/login', this.state.credentials)
         .then(res => {
             console.log('Res', res.data.key)
            localStorage.setItem('token', res.data.key)
@@ -42,7 +42,6 @@ class SignIn extends React.Component {
     render(){
         return(
             <div className='main-container'>
-                <img className='bg-img' src='./mainbg.jpeg'/>
                 <div className='signin'>
                 <form onSubmit={this.handleSubmit}>
                     <input

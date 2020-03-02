@@ -15,7 +15,7 @@ class SignUp extends React.Component{
     
     addUser = e => {
         e.preventDefault();
-        axios.post('api/login', this.state.credentials)
+        axios.post('https://adv-project-test.herokuapp.com/api/registration', this.state.credentials)
         .then(res => {
             localStorage.setItem('token', res.data.key)
             console.log('User created', res.data.key)
@@ -36,7 +36,6 @@ class SignUp extends React.Component{
     render(){ 
     return(
         <div className='main-container'>
-            <img className='bg-img' src='./mainbg.jpeg'/>
             <div className='signup'>    
             <form
             onSubmit={this.addUser}>
