@@ -7,8 +7,7 @@ class SignUp extends React.Component{
         this.state ={
             credentials: {
                 username: '',
-                password1: '',
-                password2: ''
+                password1:''
             }
         }
     }
@@ -51,14 +50,7 @@ class SignUp extends React.Component{
                 name="password1"
                 type="password"
                 placeholder='Password'
-                value={this.state.credentials.password1}
-                onChange={this.handleChange}
-                required/>
-                <input
-                name="password2"
-                type="password"
-                placeholder="Confirm Password"
-                value={this.state.credentials.password2}
+                value={this.state.credentials.password}
                 onChange={this.handleChange}
                 required/>
                 <button>Sign Up!</button>
