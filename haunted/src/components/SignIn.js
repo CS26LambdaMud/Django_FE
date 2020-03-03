@@ -24,7 +24,7 @@ class SignIn extends React.Component {
     handleSubmit = e => {
         // let localStorage;
         e.preventDefault();
-        axios.post('https://adv-project-test.herokuapp.com/api/login', this.state.credentials)
+        axios.post('https://adv-project-test.herokuapp.com/api/login/', this.state.credentials)
         .then(res => {
             console.log('Res', res.data.key)
            localStorage.setItem('token', res.data.key)
@@ -34,7 +34,7 @@ class SignIn extends React.Component {
         .catch(err => {
             this.setState({
                 ...this.state,
-                error: 'Incorrect email or password'
+                error: 'Incorrect username or password'
             })
             console.log(err)
         })
