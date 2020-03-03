@@ -5,7 +5,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp'
 import Game from './components/Game'
 import LandingPage from './components/landing';
-import Navbar from "./components/navbar/navbar"
+import Navbar from "./components/navbar/Navbar"
 import './App.css';
 
 function App() {
