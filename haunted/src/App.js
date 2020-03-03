@@ -4,6 +4,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import SignIn from './components/SignIn';
 import SignUp from '../src/components/SignUp';
 import LandingPage from './components/landing';
+
 import './App.css';
 
 function App() {
