@@ -5,6 +5,7 @@ import SignIn from './components/SignIn';
 import SignUp from '../src/components/SignUp'
 import Game from '../src/components/Game'
 import LandingPage from './components/landing';
+
 import './App.css';
 
 function App() {
