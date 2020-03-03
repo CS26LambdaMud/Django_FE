@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <Switch>
       <Route path="/" component ={LandingPage} />
-      <Route path="/signup" component={SignUp} />
-      <Route path="/signin" component={SignIn} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/signin" component={SignIn} />
       <PrivateRoute path="/play" component={Game}/>
       </Switch>
     </div>
