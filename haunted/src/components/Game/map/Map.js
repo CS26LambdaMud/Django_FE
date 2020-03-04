@@ -1,41 +1,35 @@
-import React, { Component } from 'react'
-import './Map.css'
-import axios from 'axios'
+import React, {useState, useEffect, useRef} from "react";
+import axios from "axios";
 
-class Map extends React.Component {
-  constructor(props){
-    super(props)
+//aliases for types of rooms in map object from server
+const roomTypes = {
+  crossable: 1,
+  notCrossable: 2
+}
 
-    this.state = {
-      room: {
-          x: '',
-          y: ''
-        }
-      }
-    }
+const Map = () => {
+    const [mapData, setMapData] = useState(null);
+    const room_size = 100; //size of rooms (squares) in pixels
+    const canvas = useRef(null);
 
-    map_obj = () => {
-      console.log('button pressed')
+    const drawMap = () => {
 
     }
 
-  render(){
-    return(
-      <div>
-      <h1> Haunted </h1>
-        <canvas className='map' ref='canvas' width={ 720 } height={ 450 }> </canvas>
-
-        <br/>
-
-        <button
-          type="button"
-          onClick={this.map_obj}
-          >
-          Start Game
-        </button>
-      </div>
-    )
-  }
+    useEffect(() => {
+        axios.get("https://advapi.herokuapp.com/api/adv/map")
+        .then(res => {
+            setMapData(Object.values(res.data));    
+            canvas.current = <canvas width="2000" height="2000" ref={canvas}/>
+        })
+        .catch(err => console.log(err));
+    }, []);
+    
+    if(mapData === null)
+        return <p>Loading map data</p>;
+    
+    console.log(mapData);
+    return <></>;
 }
 
 export default Map
