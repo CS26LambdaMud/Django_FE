@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp'
-import Game from './components/Game'
+import Game from './components/Game/Game'
 import LandingPage from './components/landing';
 import Navbar from "./components/navbar/Navbar"
 import './App.css';

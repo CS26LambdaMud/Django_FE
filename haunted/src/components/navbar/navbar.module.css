@@ -1,12 +1,19 @@
 .container {
-    padding: 1rem 30%;
     background-color: black;
+    border: 2px solid white;
+    box-shadow: 3px 5px grey;
     display: flex;
     justify-content: space-between;
+    width: 50%;
+    height: 35px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .container * {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
+    letter-spacing: 10px;
+    align-self: center;
 }
