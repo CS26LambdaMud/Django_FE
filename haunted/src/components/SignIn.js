@@ -3,16 +3,16 @@ import axios from 'axios';
 
 class SignIn extends React.Component {
     constructor(props){
-        super(props)
+      super(props)
 
-    this.state={ 
+      this.state={
         credentials:{
-            username: '',
-            password: ''
+          username: '',
+          password: ''
         },
-        error: ''
+          error: ''
         }
-    };
+      };
     handleChange = e => {
         this.setState({
             credentials:{
