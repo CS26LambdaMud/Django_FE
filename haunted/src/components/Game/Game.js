@@ -7,7 +7,7 @@ const Game = () => {
     const canvasRef = useRef(null);    
 
     useEffect(() => {
-        axios.get("https://advapi.herokuapp.com/api/adv/map")
+        axios.get("https://advapi.herokuapp.com/api/adv/allmaps")
         .then(res => {
             setMapData(res.data);  
             drawMap(canvasRef.current, res.data);
@@ -18,7 +18,6 @@ const Game = () => {
     if(mapData === null)
         return <p>Loading map data</p>;
     
-    console.log(mapData);
     return <>
       <canvas width={mapSize * roomSize} height={mapSize * roomSize} ref={canvasRef}/>
     </>;
