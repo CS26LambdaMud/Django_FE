@@ -5,7 +5,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp'
 import Game from './components/Game/Game'
 import LandingPage from './components/landing';
-import Navbar from "./components/navbar/navbar"
+import Navbar from "./components/navbar/Navbar"
 import './App.css';
 
 function App() {
@@ -27,7 +27,8 @@ function App() {
       <Route exact path="/" component ={()=><LandingPage music ={music} />} />
       <Route path="/signup" component={SignUp} />
       <Route path="/signin" component={SignIn} />
-      <PrivateRoute path="/play" component={Game}/>
+      {/* <PrivateRoute path="/play" component={Game}/> */}
+      <Route path="/play" component={Game}/>
       </Switch>
     </div>
   );
