@@ -5,11 +5,11 @@ import './DirectionPad.scss'
 
 const DirectionPad = (props) => {
     const [direction, setDirection] = useState('')
-   
+    const token=localStorage.getItem('token')
 
     const handleSubmit = e => {
         setDirection(e.target.value);
-        axios.post("https://advapi.herokuapp.com/api/adv/move", { "direction": e.target.value }).then(res => {
+        axios.post("https://advapi.herokuapp.com/api/adv/move/", { "Authorization": `${token}`, "direction": e.target.value }).then(res => {
             console.log(res.data);
             props.setMoveData(res.data);
         }).catch(err => {
