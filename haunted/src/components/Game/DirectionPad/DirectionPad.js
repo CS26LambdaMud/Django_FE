@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../../../utils/AxiosWithAuth'
-
-import './DirectionPad.scss'
 import axiosWithAuth from '../../../utils/AxiosWithAuth';
+import InfoBox from '../InfoBox/InfoBox'
+import './DirectionPad.scss'
 
 const DirectionPad = (props) => {
     const [direction, setDirection] = useState('')
-    const token=localStorage.getItem('token')
+    const [moveData,setMoveData] = useState('')
 
     const handleSubmit = e => {
         setDirection(e.target.value);
         axiosWithAuth().post("/adv/move/", {"direction": e.target.value }).then(res => {
-            console.log(res.data);
-            props.setMoveData(res.data);
+            console.log('res.data',res.data);
+            setMoveData(res.data);
         }).catch(err => {
             console.log(err);
         });
@@ -27,6 +25,7 @@ const DirectionPad = (props) => {
             <br/>
             <button value="w" onClick={handleSubmit} className="west"></button>
             <button value="e" onClick={handleSubmit} className="east"></button>
+            <InfoBox moveData={moveData} />
         </div >
     );
 }
