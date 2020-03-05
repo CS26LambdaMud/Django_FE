@@ -15,7 +15,8 @@ class SignUp extends React.Component{
 
     addUser = e => {
         e.preventDefault();
-        axios.post('https://adv-project-test.herokuapp.com/api/registration/', this.state.credentials)
+        // axios.post('https://adv-project-test.herokuapp.com/api/registration/', this.state.credentials)
+        axios.post('https://advapi.herokuapp.com/api/registration/', this.state.credentials)
         .then(res => {
             localStorage.setItem('token', res.data.key)
             console.log('User created', res.data.key)

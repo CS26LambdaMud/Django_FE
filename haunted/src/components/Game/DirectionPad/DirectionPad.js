@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../../../utils/AxiosWithAuth'
 
 import './DirectionPad.scss'
+import axiosWithAuth from '../../../utils/AxiosWithAuth';
 
 const DirectionPad = (props) => {
     const [direction, setDirection] = useState('')
@@ -9,7 +11,7 @@ const DirectionPad = (props) => {
 
     const handleSubmit = e => {
         setDirection(e.target.value);
-        axios.post("https://advapi.herokuapp.com/api/adv/move/", { "Authorization": `${token}`, "direction": e.target.value }).then(res => {
+        axiosWithAuth().post("/adv/move/", {"direction": e.target.value }).then(res => {
             console.log(res.data);
             props.setMoveData(res.data);
         }).catch(err => {
