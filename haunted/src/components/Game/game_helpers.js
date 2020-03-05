@@ -7,13 +7,12 @@ export const roomTypes = {
 export const mapSize = 20;
 export const roomSize = 30; //pixels
 
-const bgColor = "#0d1bea"
+const bgColor = "#575757"
 
 export const drawMap = (canvas, mapData) => {
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-     
     for(const key in mapData) {
         const room = mapData[key];
         const rectPosX = room.x_pos * roomSize;
@@ -25,10 +24,10 @@ export const drawMap = (canvas, mapData) => {
 
         switch(room.room_type) {
             case roomTypes.type1: 
-                ctx.fillStyle = "#79ea0d"
+                ctx.fillStyle = "#7a6949"
                 break;
             case roomTypes.type2:
-                ctx.fillStyle = "#ea500d"
+                ctx.fillStyle = "#2b2313"
                 break;
             case roomTypes.exit:
                 ctx.fillStyle = "#000000"

@@ -7,6 +7,7 @@ const roomTypes = {
   notCrossable: 2
 }
 
+
 const Map = () => {
     const [mapData, setMapData] = useState(null);
     const room_size = 100; //size of rooms (squares) in pixels
