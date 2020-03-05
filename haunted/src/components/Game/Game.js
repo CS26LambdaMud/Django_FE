@@ -24,7 +24,7 @@ const Game = () => {
     return <>
 
       <canvas width={mapSize * roomSize} height={mapSize * roomSize} ref={canvasRef}/>
-      <Map/>      
+      <Map/>
       <DirectionPad/>
     </>;
 
