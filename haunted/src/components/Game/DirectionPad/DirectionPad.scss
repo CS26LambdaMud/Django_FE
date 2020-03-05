@@ -1,0 +1,28 @@
+button {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin-right: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+button.north {
+  background: url(./assets/north.svg);
+}
+
+button.south {
+  background: url(./assets/south.svg);
+}
+
+button.east {
+  background: url(./assets/east.svg);
+}
+
+button.west {
+  background: url(./assets/west.svg);
+}

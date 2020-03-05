@@ -2,9 +2,8 @@ import React, {useState, useEffect, useRef} from "react";
 import axios from "axios";
 import {drawMap, roomTypes, mapSize, roomSize} from "./game_helpers.js"
 
-import Info from './Info'
 import Map from '../Game/map/Map'
-import DirectionPad from './DirectionPad'
+import DirectionPad from './DirectionPad/DirectionPad'
 
 const Game = () => {
     const [mapData, setMapData] = useState(null);
@@ -25,8 +24,7 @@ const Game = () => {
     return <>
 
       <canvas width={mapSize * roomSize} height={mapSize * roomSize} ref={canvasRef}/>
-      <Map/>
-      <Info/>
+      <Map/>      
       <DirectionPad/>
     </>;
 
