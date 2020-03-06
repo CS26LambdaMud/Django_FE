@@ -10,8 +10,7 @@ const DirectionPad = (props) => {
     const handleSubmit = e => {
         setDirection(e.target.value);
         axiosWithAuth().post("/adv/move/", {"direction": e.target.value }).then(res => {
-            console.log('res.data',res.data);
-            setMoveData(res.data);
+            props.onMove(res.data);
         }).catch(err => {
             console.log(err);
         });
