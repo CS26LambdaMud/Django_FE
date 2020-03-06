@@ -8,13 +8,13 @@ export const mapSize = 20;
 export const roomSize = 30; //pixels
 
 //room colors
-const bgColor = "#0d1bea";
+const bgColor = "#302c2c";
 const curRoomColor = "#006666";
 
 const setRoomColor = (ctx, room) => {
     switch(room.room_type) {
         case roomTypes.type1: 
-            ctx.fillStyle = "#79ea0d";
+            ctx.fillStyle = "#423003";
             break;
         case roomTypes.type2:
             ctx.fillStyle = "#ea500d";
