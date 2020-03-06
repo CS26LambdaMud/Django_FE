@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import './Styles.scss'
+
 class SignIn extends React.Component {
     constructor(props){
       super(props)
@@ -46,6 +48,7 @@ class SignIn extends React.Component {
                 <div className='signin'>
                 <form onSubmit={this.handleSubmit}>
                     <input
+                    className='input'
                     type="text"
                     name="username"
                     placeholder="username"
@@ -54,13 +57,14 @@ class SignIn extends React.Component {
                     required/>
                     <br/>
                     <input
+                    className='input'
                     type="password"
                     name="password"
                     value={this.state.credentials.password}
                     onChange={this.handleChange}
                     placeholder="password"
                     required/>
-                    <button>Login</button>
+                    <button className='btn' >Login</button>
                     <p className='login-error'>
                         {this.state.error ? this.state.error : null}
                     </p>
