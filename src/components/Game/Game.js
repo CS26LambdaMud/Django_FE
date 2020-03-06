@@ -30,8 +30,6 @@ const Game = () => {
             .then(res => {
                 setMapData(res.data); 
                 drawMap(canvasRef.current, res.data, {x_pos: initRes.data.pos_x, y_pos: initRes.data.pos_y});
-                // movePlayer(canvasRef.current, mapData, )
-
             })
             .catch(err => console.log(err));
         })

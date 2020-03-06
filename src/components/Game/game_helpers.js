@@ -62,5 +62,4 @@ export const drawMap = (canvas, mapData, playerPos) => {
 
     ctx.fillStyle = curRoomColor;
     drawRoom(ctx, playerPos);
-    console.log(playerPos)
 }
