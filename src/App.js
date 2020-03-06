@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useCallback} from 'react';
 import { Route, Switch } from "react-router-dom";
 import PrivateRoute from './utils/PrivateRoute';
 import SignIn from './components/SignUp/SignIn';
@@ -11,15 +11,15 @@ import './App.css';
 function App() {
   let music = new Audio('menu.mp3');
 
-  // const playMusic = useCallback(() =>{
-  //   document.removeEventListener('click', playMusic)
-  //   music.play();
-  //   music.loop = true;
-  // })
+  const playMusic = useCallback(() =>{
+    document.removeEventListener('click', playMusic)
+    music.play();
+    music.loop = true;
+  })
 
-  // useEffect(()=>{
-  //   document.addEventListener('click', playMusic)
-	// },[])
+  useEffect(()=>{
+    document.addEventListener('click', playMusic)
+	},[playMusic])
   return (
     <div className="App">
       <Navbar/>
