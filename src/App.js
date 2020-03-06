@@ -27,8 +27,7 @@ function App() {
       <Route exact path="/" component ={()=><LandingPage music ={music} />} />
       <Route path="/signup" component={SignUp} />
       <Route path="/signin" component={SignIn} />
-      {/* <PrivateRoute path="/play" component={Game}/> */}
-      <Route path="/play" component={Game}/>
+      <PrivateRoute path="/play" component={Game}/>
       </Switch>
     </div>
   );
